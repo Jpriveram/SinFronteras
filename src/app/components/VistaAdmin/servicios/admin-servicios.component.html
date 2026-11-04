@@ -1,0 +1,36 @@
+<app-navbar />
+<main id="contenido-principal" class="admin-page">
+  <a routerLink="/servicios" class="back">← Directorio público</a>
+  <p class="overline">MÓDULO ADMINISTRATIVO · MAQUETA FUNCIONAL</p>
+  <h1>Gestionar información de servicios</h1>
+  <div class="warning" role="note"><strong>Solo demostración local:</strong> este módulo no utiliza autenticación ni servidor; los cambios se guardan únicamente en el navegador. No publiques datos sensibles aquí. Antes de uso real, conectar con Spring Boot + MySQL y proteger la administración con acceso autorizado.</div>
+  <div class="admin-layout">
+    <section aria-labelledby="records-title" class="record-list">
+      <h2 id="records-title">Fichas registradas ({{ items.length }})</h2>
+      <button type="button" class="light-btn" (click)="newRecord()">+ Nueva ficha</button>
+      <ul>
+        <li *ngFor="let item of items"><div><strong>{{ item.nombre }}</strong><small>{{ item.institucion }}</small></div><div class="actions"><button type="button" (click)="edit(item)" [attr.aria-label]="'Editar ' + item.nombre">Editar</button><button type="button" (click)="remove(item)" [attr.aria-label]="'Eliminar ' + item.nombre">Eliminar</button></div></li>
+      </ul>
+      <button type="button" class="light-btn" (click)="reset()">Restablecer datos de ejemplo</button>
+    </section>
+    <section class="form-section" aria-labelledby="form-title">
+      <h2 id="form-title">{{ editingExisting ? 'Editar ficha' : 'Agregar ficha' }}</h2>
+      <form (ngSubmit)="save()" #form="ngForm">
+        <label for="nombre">Nombre del servicio *</label><input id="nombre" name="nombre" [(ngModel)]="editing.nombre" required>
+        <label for="institucion">Institución *</label><input id="institucion" name="institucion" [(ngModel)]="editing.institucion" required>
+        <label for="categoria">Categoría</label><select id="categoria" name="categoria" [(ngModel)]="editing.categoria"><option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option></select>
+        <label for="descripcion">Descripción *</label><textarea id="descripcion" name="descripcion" [(ngModel)]="editing.descripcion" rows="3" required></textarea>
+        <label for="requisitos">Requisitos</label><textarea id="requisitos" name="requisitos" [(ngModel)]="editing.requisitos" rows="2"></textarea>
+        <label for="horarios">Horarios</label><input id="horarios" name="horarios" [(ngModel)]="editing.horarios">
+        <label for="contacto">Contacto</label><input id="contacto" name="contacto" [(ngModel)]="editing.contacto">
+        <label for="ubicacion">Ubicación (solo Cercado)</label><input id="ubicacion" name="ubicacion" [(ngModel)]="editing.ubicacion">
+        <label for="web">Web de la institución (https://)</label><input id="web" name="web" [(ngModel)]="editing.sitioWeb" placeholder="https://">
+        <label for="lsb">Recurso multimedia LSB (https://)</label><input id="lsb" name="lsb" [(ngModel)]="editing.recursoLSB" placeholder="https://">
+        <label class="verify"><input type="checkbox" name="verificado" [(ngModel)]="editing.verificado"> Información revisada con la institución</label>
+        <div class="form-buttons"><button class="primary-btn" type="submit" [disabled]="form.invalid">Guardar ficha</button><button class="light-btn" type="button" (click)="newRecord()">Cancelar</button></div>
+      </form>
+      <p class="status" role="status" aria-live="polite">{{ status }}</p>
+    </section>
+  </div>
+</main>
+<app-footer />

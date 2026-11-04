@@ -1,0 +1,22 @@
+<app-navbar />
+<main id="contenido-principal" class="details-page">
+  <a routerLink="/servicios" class="back">← Volver al directorio</a>
+  <ng-container *ngIf="item as service; else missing">
+    <p class="category">{{ service.categoria }} · CERCADO, COCHABAMBA</p>
+    <h1>{{ service.nombre }}</h1>
+    <div class="verified" [class.is-verified]="service.verificado">{{ service.verificado ? 'Datos revisados por la administración del prototipo' : 'FICHA DE DEMOSTRACIÓN · información sin verificar' }}</div>
+    <p class="lead">{{ service.descripcion }}</p>
+    <section class="detail-grid" aria-label="Información del servicio">
+      <article><h2>Institución responsable</h2><p>{{ service.institucion }}</p></article>
+      <article><h2>Requisitos</h2><p>{{ service.requisitos }}</p></article>
+      <article><h2>Horario de atención</h2><p>{{ service.horarios }}</p></article>
+      <article><h2>Contacto</h2><p>{{ service.contacto }}</p></article>
+      <article><h2>Ubicación</h2><p>{{ service.ubicacion }}</p></article>
+      <article><h2>Información y recursos LSB</h2><p *ngIf="!externalLsb">No se ha incorporado todavía un recurso multimedia en Lengua de Señas Boliviana para esta ficha.</p><p *ngIf="externalLsb"><a [href]="externalLsb" target="_blank" rel="noopener noreferrer">Abrir recurso multimedia en Lengua de Señas Boliviana (sitio externo)</a></p></article>
+    </section>
+    <div class="contact-actions" *ngIf="externalWeb"><a [href]="externalWeb" target="_blank" rel="noopener noreferrer">Visitar sitio de la institución ↗</a></div>
+    <p class="disclaimer">El portal presenta información y no garantiza la prestación o disponibilidad de servicios. Confirma los datos directamente con la institución. No realizamos trámites, solicitudes ni pagos.</p>
+  </ng-container>
+  <ng-template #missing><h1>Ficha no encontrada</h1><p>Esta ficha ya no existe o la dirección no es correcta.</p><a routerLink="/servicios">Volver al directorio</a></ng-template>
+</main>
+<app-footer />

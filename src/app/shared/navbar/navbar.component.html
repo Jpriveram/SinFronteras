@@ -1,0 +1,20 @@
+<a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+<header class="sf-header">
+  <nav class="sf-nav" aria-label="Navegación principal">
+    <a routerLink="/" class="sf-logo" (click)="closeMenu()" aria-label="Sin Fronteras, volver a inicio">
+      <img src="assets/imagenes/logo-original-figma.png" alt="Sin Fronteras" width="150" height="85">
+    </a>
+    <button class="mobile-menu" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-controls="sf-links" [attr.aria-label]="menuOpen ? 'Cerrar menú' : 'Abrir menú'">{{ menuOpen ? '✕' : '☰' }}</button>
+    <div class="sf-links" [class.sf-links--open]="menuOpen" id="sf-links">
+      <a routerLink="/" routerLinkActive="sf-links__active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">Inicio</a>
+      <a routerLink="/servicios" routerLinkActive="sf-links__active" (click)="closeMenu()">Servicios</a>
+      <a routerLink="/" fragment="como-funciona" (click)="closeMenu()">Cómo consultar</a>
+      <a routerLink="/" fragment="accesibilidad" (click)="closeMenu()">Accesibilidad</a>
+    </div>
+    <div class="sf-access" aria-label="Herramientas de accesibilidad">
+      <button type="button" (click)="adjustFont(-1)" title="Reducir letra" aria-label="Reducir tamaño de letra">A−</button>
+      <button type="button" (click)="adjustFont(1)" title="Aumentar letra" aria-label="Aumentar tamaño de letra">A+</button>
+      <button type="button" (click)="toggleContrast()" [attr.aria-pressed]="highContrast" title="Alto contraste" aria-label="Alternar alto contraste">◐</button>
+    </div>
+  </nav>
+</header>

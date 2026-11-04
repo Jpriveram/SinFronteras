@@ -1,0 +1,64 @@
+<app-navbar />
+<main id="contenido-principal" class="figma-home">
+  <section class="home-intro" aria-labelledby="home-title">
+    <figure class="home-intro__photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Personas_con_discapacidad%2C_Bolivia%2C_2016.jpg" alt="Marcha de personas con discapacidad en una calle de La Paz, Bolivia, durante 2016" width="1440" height="960" fetchpriority="high">
+      <figcaption>Personas con discapacidad visibilizando sus derechos en Bolivia</figcaption>
+    </figure>
+    <div class="home-intro__text">
+      <span class="home-intro__eyebrow">PORTAL DE CONSULTA PÚBLICA · CERCADO, COCHABAMBA</span>
+      <h1 id="home-title">Sin Fronteras</h1>
+      <div class="home-intro__description">Un lugar para conocer los servicios e instituciones de apoyo a personas con discapacidad en Cercado, Cochabamba. Encuentra información sobre requisitos, horarios, ubicación y medios de contacto desde un mismo portal, sin registrarte.</div>
+      <a class="mini-register" routerLink="/servicios">Explorar servicios <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="home-phrases" aria-label="Qué ofrece el portal">
+    <div class="home-phrases__copy">
+      <p class="phrase phrase--blue">Información institucional centralizada para una consulta más sencilla.</p>
+      <p class="phrase phrase--green">Búsqueda y filtros para encontrar servicios según tus necesidades.</p>
+      <p class="phrase phrase--yellow">Requisitos, horarios, ubicación y contacto reunidos en cada ficha.</p>
+      <p class="phrase phrase--cream">Acceso público sin crear una cuenta ni iniciar sesión.</p>
+    </div>
+    <figure class="home-phrases__photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Plaza_14_de_Septiembre_Cochabamba.jpg" alt="Fotografía real de la Plaza 14 de Septiembre en el centro de Cochabamba" width="1200" height="900" loading="lazy">
+      <figcaption>Plaza 14 de Septiembre · Cochabamba</figcaption>
+    </figure>
+  </section>
+
+  <section class="home-benefits" id="como-funciona" aria-labelledby="benefits-title">
+    <figure class="home-benefits__photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Plaza_principal_de_Cochabamba_es_la_Plaza_14_de_Septiembre.jpg" alt="Imagen de la Plaza 14 de Septiembre, un espacio público de Cochabamba" width="1266" height="953" loading="lazy">
+      <figcaption>La información reunida para nuestra ciudad</figcaption>
+    </figure>
+    <div class="home-benefits__text">
+      <h2 id="benefits-title">PUEDES ENCONTRAR :</h2>
+      <ul class="benefits-list">
+        <li><span class="check" aria-hidden="true">✓</span><a routerLink="/servicios"><strong>Instituciones y servicios:</strong> Consulta la información disponible desde un solo lugar.</a></li>
+        <li><span class="check" aria-hidden="true">✓</span><a routerLink="/servicios"><strong>Búsqueda y filtrado:</strong> Encuentra opciones por palabra clave o categoría.</a></li>
+        <li><span class="check" aria-hidden="true">✓</span><a routerLink="/servicios"><strong>Fichas informativas:</strong> Descripción, requisitos, horarios, contacto y ubicación.</a></li>
+        <li><span class="check" aria-hidden="true">✓</span><a routerLink="/" fragment="accesibilidad"><strong>Accesibilidad:</strong> Navegación con teclado, ajuste de letra, contraste y espacio para recursos LSB.</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="home-steps" id="accesibilidad" aria-labelledby="steps-title">
+    <h2 id="steps-title">Consulta a tu ritmo, sin barreras innecesarias</h2>
+    <div class="steps-list">
+      <article class="step-card"><div class="step-number" aria-hidden="true">01</div><h3>Busca</h3><p>Escribe lo que necesitas o selecciona una categoría del directorio.</p></article>
+      <article class="step-card"><div class="step-number" aria-hidden="true">02</div><h3>Consulta</h3><p>Revisa la descripción, los requisitos y los datos que publique cada institución.</p></article>
+      <article class="step-card"><div class="step-number" aria-hidden="true">03</div><h3>Contacta</h3><p>Cuando existan datos verificados, consulta directamente con la entidad responsable.</p></article>
+    </div>
+    <p class="lsb-note"><strong>Lengua de Señas Boliviana:</strong> el proyecto contempla recursos multimedia LSB para presentar la información del portal. Esta versión deja su espacio previsto, sin simular traducción automática ni un video que todavía no se ha incorporado.</p>
+  </section>
+
+  <section class="home-register" aria-labelledby="register-title">
+    <div class="register-stripe">Información sobre discapacidad en Cercado, Cochabamba — consulta libre y gratuita</div>
+    <div class="home-register__body"><h2 id="register-title">EXPLORA LOS SERVICIOS <span aria-hidden="true">→</span></h2><a class="register-action" routerLink="/servicios">Abrir directorio</a></div>
+  </section>
+
+  <aside class="media-credits" aria-label="Créditos de imágenes">
+    <strong>Fotografías reales de la web:</strong> <a href="https://commons.wikimedia.org/wiki/File:Personas_con_discapacidad,_Bolivia,_2016.jpg" target="_blank" rel="noopener noreferrer">Puya Raimondi, Bolivia 2016 · CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Plaza_14_de_Septiembre_Cochabamba.jpg" target="_blank" rel="noopener noreferrer">Yerelitza Vargas Marza, Cochabamba 2023 · CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Plaza_principal_de_Cochabamba_es_la_Plaza_14_de_Septiembre.jpg" target="_blank" rel="noopener noreferrer">Maldonadosanchez, Cochabamba 2026 · CC BY-SA 4.0</a>.
+  </aside>
+</main>
+<app-footer />

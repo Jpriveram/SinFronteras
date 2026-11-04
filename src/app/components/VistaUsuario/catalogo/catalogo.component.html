@@ -1,0 +1,20 @@
+<app-navbar />
+<main class="directory-page" id="contenido-principal">
+  <div class="heading"><a routerLink="/" class="back">← Volver a inicio</a><p class="overline">CERCADO · COCHABAMBA</p><h1>Directorio de servicios</h1><p>Busca información sobre servicios destinados a personas con discapacidad. La consulta es pública y no requiere registrarte.</p></div>
+  <div class="demo-alert" role="note"><strong>Datos de demostración:</strong> las fichas iniciales son ejemplos para probar búsqueda, filtros y detalles. No corresponden a servicios comprobados. Los datos reales deberán ser revisados con las instituciones antes de publicarse.</div>
+  <section class="filters" aria-label="Buscar y filtrar servicios">
+    <div class="filter-group"><label for="search">Buscar por palabra clave</label><input id="search" type="search" placeholder="Ej.: rehabilitación, derechos, educación" autocomplete="off" [(ngModel)]="query"></div>
+    <div class="filter-group"><label for="category">Categoría de servicio</label><select id="category" [(ngModel)]="selectedCategory"><option value="Todas">Todas las categorías</option><option *ngFor="let category of categories" [value]="category">{{ category }}</option></select></div>
+    <button type="button" class="clear" (click)="clear()">Limpiar filtros</button>
+  </section>
+  <p class="count" role="status" aria-live="polite">{{ filtered.length }} {{ filtered.length === 1 ? 'ficha encontrada' : 'fichas encontradas' }}</p>
+  <section class="results" aria-label="Resultados del directorio">
+    <article *ngFor="let item of filtered" class="service-card">
+      <div><p class="category">{{ item.categoria }}</p><h2>{{ item.nombre }}</h2><p class="institution">{{ item.institucion }}</p><p>{{ item.descripcion }}</p></div>
+      <div class="service-bottom"><span [class.verified]="item.verificado" class="status">{{ item.verificado ? 'Información revisada' : 'Datos pendientes de verificar' }}</span><a [routerLink]="['/servicios', item.id]">Ver ficha y requisitos →</a></div>
+    </article>
+    <div *ngIf="filtered.length === 0" class="empty">No encontramos fichas con esos filtros. Puedes probar otra palabra o seleccionar todas las categorías.</div>
+  </section>
+  <p class="footnote">El portal solo ofrece información. No permite tramitar, reservar, solicitar prestaciones ni hacer pagos.</p>
+</main>
+<app-footer />

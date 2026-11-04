@@ -1,0 +1,124 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vista previa — Sin Fronteras</title><style>:root{--font-scale:100%;color-scheme:light;scroll-behavior:smooth}*{box-sizing:border-box}html{font-size:var(--font-scale)}body{margin:0;color:#222;background:#fff;font-family:Arial,Helvetica,sans-serif}a,button,input,textarea,select{font:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #174ce1!important;outline-offset:3px}.skip-link{position:absolute;top:-100px;left:12px;z-index:10000;background:#fff;color:#000;padding:11px}.skip-link:focus{top:8px}body.alto-contraste{background:#000!important;color:#fff!important}body.alto-contraste .sf-header,body.alto-contraste .sf-nav,body.alto-contraste main,body.alto-contraste section,body.alto-contraste article,body.alto-contraste footer,body.alto-contraste aside,body.alto-contraste .home-intro__description,body.alto-contraste .demo-alert{background:#080808!important;color:#fff!important}body.alto-contraste h1,body.alto-contraste h2,body.alto-contraste h3,body.alto-contraste p,body.alto-contraste label,body.alto-contraste strong,body.alto-contraste small,body.alto-contraste span,body.alto-contraste a{color:#fff!important}body.alto-contraste a{text-decoration:underline!important}body.alto-contraste .phrase,body.alto-contraste .register-stripe,body.alto-contraste .mini-register,body.alto-contraste .register-action{background:#161616!important;color:#fff!important;border:2px solid #ffec4f!important}body.alto-contraste img{filter:grayscale(1)}body.alto-contraste .check{color:#fff!important}body.alto-contraste input,body.alto-contraste select,body.alto-contraste textarea{background:#222!important;color:#fff!important;border-color:#fff!important}body.alto-contraste button{background:#222!important;color:#fff!important;border-color:#ff0!important}
+</style>
+<style>
+:host {display:block;}
+.sf-header{background:#fff;border-bottom:1px solid #eeeeec;position:relative;z-index:20;}
+.sf-nav{width:min(1180px,calc(100% - 46px));margin:auto;min-height:95px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.sf-logo{flex-shrink:0;display:flex;align-items:center;}
+.sf-logo img{width:137px;height:78px;object-fit:contain;object-position:left center;}
+.sf-links{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:clamp(9px,1.4vw,22px);margin-left:auto;}
+.sf-links>a{font-weight:700;font-size:clamp(.67rem,.92vw,.82rem);color:#292929;text-decoration:none;white-space:nowrap;transition:color .15s;}
+.sf-links>a:hover,.sf-links__active{color:#90340d!important;}
+.sf-links .sf-profile{padding:10px 16px;color:#fff;background:#5b1618;border-radius:3px;}
+.sf-links .sf-profile:hover{color:#fff!important;background:#7a211f;}
+.sf-access{display:flex;align-items:center;gap:3px;border-left:1px solid #eee;padding-left:10px;}
+.sf-access button{border:1px solid #e6e6e6;background:#fff;color:#242424;border-radius:4px;min-width:28px;min-height:29px;font-weight:700;font-size:.65rem;}
+.sf-access button:hover{background:#f3f3f3;}
+.mobile-menu{display:none;background:#fff;border:1px solid #aaa;border-radius:4px;font-size:1.2rem;padding:4px 10px;}
+@media(max-width:1100px){.sf-nav{flex-wrap:wrap;padding-block:12px;}.sf-links{order:3;width:100%;justify-content:center;margin:0}.sf-access{margin-left:auto}.sf-logo img{height:62px;width:124px}}
+@media(max-width:620px){.sf-nav{width:calc(100% - 32px);min-height:70px;gap:6px}.sf-logo img{width:100px;height:52px}.mobile-menu{display:block;margin-left:auto}.sf-access{border-left:0;margin-left:0;}.sf-links{display:none;flex-direction:column;align-items:stretch;width:100%;padding:12px 0 16px;gap:0;order:5}.sf-links.sf-links--open{display:flex}.sf-links a{font-size:.94rem;padding:10px 12px;border-bottom:1px solid #eee}.sf-links .sf-profile{margin-top:9px;text-align:center}}
+</style>
+<style>:host{display:block}.figma-home{width:min(1180px,calc(100% - 46px));margin:0 auto;padding:26px 0 0;color:#262626;font-family:Arial,Helvetica,sans-serif}.figma-home h1,.figma-home h2,.figma-home h3,.figma-home p{margin-top:0}.figma-home figure{margin:0;position:relative;overflow:hidden;background:#e6e4d6}.figma-home figure>img{display:block;width:100%;height:100%;object-fit:cover}.figma-home figure>figcaption{position:absolute;bottom:0;left:0;right:0;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.63));padding:28px 16px 10px;font-size:.77rem;text-shadow:0 1px 4px #111}
+.home-intro{display:grid;grid-template-columns:57% 43%;align-items:stretch;gap:20px;min-height:415px}.home-intro__photo{min-height:410px}.home-intro__photo img{object-position:center}.home-intro__text{padding:28px 18px 22px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.home-intro__eyebrow{color:#7b7139;letter-spacing:.025em;font-size:.78rem;line-height:1.3;font-weight:700;margin-bottom:10px}.home-intro h1{font-size:clamp(2.65rem,4.6vw,4.5rem);letter-spacing:-.045em;line-height:1.05;font-weight:800;margin:0 0 15px}.home-intro__description{background:#f0f0f0;padding:18px 20px;color:#363636;font-size:1rem;line-height:1.53;max-width:450px}.mini-register{background:#f59600;color:#181818;text-decoration:none;font-size:1rem;font-weight:800;padding:13px 20px;border-radius:3px;margin-top:16px}.mini-register:hover,.register-action:hover{background:#d78200;color:#111}
+.home-phrases{display:grid;grid-template-columns:52% 48%;align-items:stretch;gap:18px;margin-top:20px}.home-phrases__copy{display:grid;gap:10px;align-content:stretch}.phrase{display:flex;align-items:center;padding:18px 22px;margin:0!important;font-size:1.09rem;line-height:1.44;font-weight:600;color:#fff;min-height:80px}.phrase--blue{background:#273b7b}.phrase--green{background:#829a54}.phrase--yellow{background:#b9af42;color:#201c07}.phrase--cream{background:#cbcbb6;color:#202020}.home-phrases__photo{min-height:360px}
+.home-benefits{display:grid;grid-template-columns:44% 56%;gap:26px;align-items:center;margin-top:22px}.home-benefits__photo{height:310px}.home-benefits__text{padding:12px 8px}.home-benefits h2{font-size:clamp(1.7rem,3.8vw,2.85rem);line-height:1.08;font-weight:800;letter-spacing:-.05em;margin:0 0 16px}.benefits-list{margin:0;padding:0;list-style:none}.benefits-list li{display:grid;grid-template-columns:45px 1fr;align-items:center;min-height:60px;border-bottom:2px solid #d2d2d2}.benefits-list a{color:#4a1010;text-decoration:none;font-size:.96rem;font-weight:600;line-height:1.32;padding:10px 4px}.benefits-list a:hover{text-decoration:underline}.check{font-size:3.7rem;color:#009945;font-weight:900;line-height:1;transform:translateY(-8px)}
+.home-steps{margin:38px 0 28px}.home-steps h2{font-size:clamp(1.7rem,2.8vw,2.55rem);letter-spacing:-.035em;font-weight:800;margin:0 0 20px}.steps-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step-card{padding:22px 24px;border:1px solid #e2e2e2;border-radius:7px;min-height:175px;background:#fff}.step-number{font-size:.9rem;color:#6a812e;font-weight:900;margin-bottom:17px}.step-card h3{margin:0 0 11px;font-size:1.25rem}.step-card p{font-size:.94rem;line-height:1.55;margin:0}.lsb-note{font-size:.92rem;background:#f5f5ef;border-left:5px solid #809a54;padding:16px 20px;line-height:1.6;margin:20px 0 0}
+.home-register{margin:12px 0 28px}.register-stripe{background:#ff9700;padding:15px 18px;color:#20140a;text-align:center;font-size:1.13rem;font-weight:800}.home-register__body{background:#f2f2f2;padding:35px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px}.home-register h2{margin:0;font-size:clamp(1.6rem,3vw,2.7rem);font-weight:800;line-height:1.15}.register-action{background:#ff9700;color:#17120a;border-radius:4px;text-decoration:none;padding:14px 20px;font-weight:800;white-space:nowrap}.media-credits{font-size:.74rem;color:#777;line-height:1.65;margin-bottom:38px}.media-credits a{color:#555;text-underline-offset:2px}
+@media(max-width:820px){.figma-home{width:calc(100% - 32px)}.home-intro{grid-template-columns:52% 48%;gap:12px;min-height:0}.home-intro__photo{min-height:345px}.home-intro__text{padding:12px 6px}.home-intro h1{font-size:2.7rem}.home-intro__description{font-size:.9rem;padding:13px}.phrase{font-size:.94rem;padding:12px;min-height:76px}.home-phrases{gap:12px}.home-benefits{gap:12px}.home-benefits__photo{height:315px}.benefits-list li{grid-template-columns:36px 1fr}.check{font-size:3rem}.benefits-list a{font-size:.87rem}.step-card{padding:18px}}
+@media(max-width:610px){.figma-home{padding-top:12px}.home-intro{display:flex;flex-direction:column;gap:0}.home-intro__photo{height:265px;min-height:0}.home-intro__text{padding:20px 6px 4px}.home-intro h1{font-size:2.8rem}.home-intro__description{max-width:none;font-size:1rem}.home-phrases{display:flex;flex-direction:column-reverse;gap:9px;margin-top:25px}.home-phrases__photo{height:210px;min-height:0}.phrase{min-height:64px;padding:14px 17px;font-size:.97rem}.home-benefits{display:flex;flex-direction:column;margin-top:27px;gap:15px;align-items:stretch}.home-benefits__photo{height:230px}.home-benefits h2{font-size:2.1rem}.benefits-list li{min-height:63px}.benefits-list a{font-size:.95rem}.steps-list{grid-template-columns:1fr;gap:10px}.step-card{min-height:0}.home-register__body{padding:22px;flex-direction:column;align-items:flex-start}.register-stripe{font-size:.97rem}.home-register h2{font-size:1.8rem}}
+</style>
+<style>.sf-footer{background:#fff;color:#292929;border-top:1px solid #eaeaea;padding:31px 0 42px;font-family:Arial,Helvetica,sans-serif}.sf-footer__inner{width:min(1180px,calc(100% - 46px));margin:auto;display:flex;align-items:flex-start;gap:26px;justify-content:space-between;flex-wrap:wrap}.sf-footer strong{font-size:1rem}.sf-footer p{max-width:330px;font-size:.87rem;line-height:1.5;color:#666;margin:9px 0 0}.sf-footer nav{display:flex;flex-wrap:wrap;gap:17px}.sf-footer a{font-size:.87rem;color:#4c4c4c;text-decoration:none}.sf-footer a:hover{text-decoration:underline}.sf-footer small{width:100%;color:#666;font-size:.77rem}@media(max-width:600px){.sf-footer__inner{display:block}.sf-footer nav{margin:20px 0}}
+</style></head><body><a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+<header class="sf-header">
+  <nav class="sf-nav" aria-label="Navegación principal">
+    <a href="/" class="sf-logo"  aria-label="Sin Fronteras, volver a inicio">
+      <img src="src/assets/imagenes/logo-original-figma.png" alt="Sin Fronteras" width="150" height="85">
+    </a>
+    <button class="mobile-menu" type="button"   aria-controls="sf-links" aria-label="Abrir menú">☰</button>
+    <div class="sf-links"  id="sf-links">
+      <a href="/" routerLinkActive="sf-links__active" [routerLinkActiveOptions]="{exact:true}" >Inicio</a>
+      <a href="/servicios" routerLinkActive="sf-links__active" >Servicios</a>
+      <a href="/"  >Cómo consultar</a>
+      <a href="/"  >Accesibilidad</a>
+    </div>
+    <div class="sf-access" aria-label="Herramientas de accesibilidad">
+      <button type="button"  title="Reducir letra" aria-label="Reducir tamaño de letra">A−</button>
+      <button type="button"  title="Aumentar letra" aria-label="Aumentar tamaño de letra">A+</button>
+      <button type="button"  aria-pressed="false" title="Alto contraste" aria-label="Alternar alto contraste">◐</button>
+    </div>
+  </nav>
+</header>
+
+
+<main id="contenido-principal" class="figma-home">
+  <section class="home-intro" aria-labelledby="home-title">
+    <figure class="home-intro__photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Personas_con_discapacidad%2C_Bolivia%2C_2016.jpg" alt="Marcha de personas con discapacidad en una calle de La Paz, Bolivia, durante 2016" width="1440" height="960" fetchpriority="high">
+      <figcaption>Personas con discapacidad visibilizando sus derechos en Bolivia</figcaption>
+    </figure>
+    <div class="home-intro__text">
+      <span class="home-intro__eyebrow">PORTAL DE CONSULTA PÚBLICA · CERCADO, COCHABAMBA</span>
+      <h1 id="home-title">Sin Fronteras</h1>
+      <div class="home-intro__description">Un lugar para conocer los servicios e instituciones de apoyo a personas con discapacidad en Cercado, Cochabamba. Encuentra información sobre requisitos, horarios, ubicación y medios de contacto desde un mismo portal, sin registrarte.</div>
+      <a class="mini-register" href="/servicios">Explorar servicios <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="home-phrases" aria-label="Qué ofrece el portal">
+    <div class="home-phrases__copy">
+      <p class="phrase phrase--blue">Información institucional centralizada para una consulta más sencilla.</p>
+      <p class="phrase phrase--green">Búsqueda y filtros para encontrar servicios según tus necesidades.</p>
+      <p class="phrase phrase--yellow">Requisitos, horarios, ubicación y contacto reunidos en cada ficha.</p>
+      <p class="phrase phrase--cream">Acceso público sin crear una cuenta ni iniciar sesión.</p>
+    </div>
+    <figure class="home-phrases__photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Plaza_14_de_Septiembre_Cochabamba.jpg" alt="Fotografía real de la Plaza 14 de Septiembre en el centro de Cochabamba" width="1200" height="900" loading="lazy">
+      <figcaption>Plaza 14 de Septiembre · Cochabamba</figcaption>
+    </figure>
+  </section>
+
+  <section class="home-benefits" id="como-funciona" aria-labelledby="benefits-title">
+    <figure class="home-benefits__photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Plaza_principal_de_Cochabamba_es_la_Plaza_14_de_Septiembre.jpg" alt="Imagen de la Plaza 14 de Septiembre, un espacio público de Cochabamba" width="1266" height="953" loading="lazy">
+      <figcaption>La información reunida para nuestra ciudad</figcaption>
+    </figure>
+    <div class="home-benefits__text">
+      <h2 id="benefits-title">PUEDES ENCONTRAR :</h2>
+      <ul class="benefits-list">
+        <li><span class="check" aria-hidden="true">✓</span><a href="/servicios"><strong>Instituciones y servicios:</strong> Consulta la información disponible desde un solo lugar.</a></li>
+        <li><span class="check" aria-hidden="true">✓</span><a href="/servicios"><strong>Búsqueda y filtrado:</strong> Encuentra opciones por palabra clave o categoría.</a></li>
+        <li><span class="check" aria-hidden="true">✓</span><a href="/servicios"><strong>Fichas informativas:</strong> Descripción, requisitos, horarios, contacto y ubicación.</a></li>
+        <li><span class="check" aria-hidden="true">✓</span><a href="/" ><strong>Accesibilidad:</strong> Navegación con teclado, ajuste de letra, contraste y espacio para recursos LSB.</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="home-steps" id="accesibilidad" aria-labelledby="steps-title">
+    <h2 id="steps-title">Consulta a tu ritmo, sin barreras innecesarias</h2>
+    <div class="steps-list">
+      <article class="step-card"><div class="step-number" aria-hidden="true">01</div><h3>Busca</h3><p>Escribe lo que necesitas o selecciona una categoría del directorio.</p></article>
+      <article class="step-card"><div class="step-number" aria-hidden="true">02</div><h3>Consulta</h3><p>Revisa la descripción, los requisitos y los datos que publique cada institución.</p></article>
+      <article class="step-card"><div class="step-number" aria-hidden="true">03</div><h3>Contacta</h3><p>Cuando existan datos verificados, consulta directamente con la entidad responsable.</p></article>
+    </div>
+    <p class="lsb-note"><strong>Lengua de Señas Boliviana:</strong> el proyecto contempla recursos multimedia LSB para presentar la información del portal. Esta versión deja su espacio previsto, sin simular traducción automática ni un video que todavía no se ha incorporado.</p>
+  </section>
+
+  <section class="home-register" aria-labelledby="register-title">
+    <div class="register-stripe">Información sobre discapacidad en Cercado, Cochabamba — consulta libre y gratuita</div>
+    <div class="home-register__body"><h2 id="register-title">EXPLORA LOS SERVICIOS <span aria-hidden="true">→</span></h2><a class="register-action" href="/servicios">Abrir directorio</a></div>
+  </section>
+
+  <aside class="media-credits" aria-label="Créditos de imágenes">
+    <strong>Fotografías reales de la web:</strong> <a href="https://commons.wikimedia.org/wiki/File:Personas_con_discapacidad,_Bolivia,_2016.jpg" target="_blank" rel="noopener noreferrer">Puya Raimondi, Bolivia 2016 · CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Plaza_14_de_Septiembre_Cochabamba.jpg" target="_blank" rel="noopener noreferrer">Yerelitza Vargas Marza, Cochabamba 2023 · CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Plaza_principal_de_Cochabamba_es_la_Plaza_14_de_Septiembre.jpg" target="_blank" rel="noopener noreferrer">Maldonadosanchez, Cochabamba 2026 · CC BY-SA 4.0</a>.
+  </aside>
+</main>
+
+
+<footer class="sf-footer">
+  <div class="sf-footer__inner">
+    <div><strong>Sin Fronteras</strong><p>Información accesible sobre servicios para personas con discapacidad en Cercado, Cochabamba.</p></div>
+    <nav aria-label="Enlaces del pie de página"><a href="/">Inicio</a><a href="/servicios">Directorio</a><a routerLink="/admin">Administración (demo)</a></nav>
+    <small>Prototipo académico · Información de ejemplo no verificada · No gestiona trámites</small>
+  </div>
+</footer>
+<div style="margin:20px auto;padding:15px;max-width:1180px;background:#f8f0ce"><strong>Vista previa estática:</strong> para probar navegación, filtros y administración utiliza <code>npm start</code>.</div></body></html>
