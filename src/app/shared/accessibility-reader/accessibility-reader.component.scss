@@ -1,0 +1,60 @@
+:host {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  display: block;
+}
+
+.accessibility-reader {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid #5b1618;
+  border-radius: 999px;
+  background: #fff;
+  color: #5b1618;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 18%);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.accessibility-reader:hover:not(:disabled) {
+  background: #f8eeee;
+}
+
+.accessibility-reader--enabled {
+  background: #5b1618;
+  color: #fff;
+}
+
+.accessibility-reader--enabled:hover:not(:disabled) {
+  background: #7a211f;
+}
+
+.accessibility-reader:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.accessibility-reader svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 480px) {
+  :host {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .accessibility-reader {
+    min-height: 44px;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,19 @@
+<button
+  class="accessibility-reader"
+  type="button"
+  [class.accessibility-reader--enabled]="enabled"
+  [disabled]="!supported"
+  [attr.aria-pressed]="enabled"
+  [attr.aria-label]="supported
+    ? 'Lectura por voz ' + (enabled ? 'activada' : 'desactivada')
+    : 'Lectura por voz no disponible en este navegador'"
+  [title]="supported
+    ? 'Activar o desactivar la lectura por voz'
+    : 'La lectura por voz no está disponible en este navegador'"
+  (click)="toggle()"
+>
+  <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+    <path d="M4 9v6h4l5 4V5L8 9H4Zm12.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12Zm-2.5-9v2.06a7 7 0 0 1 0 13.88V21a9 9 0 0 0 0-18Z" />
+  </svg>
+  <span>{{ supported ? (enabled ? 'Lectura ACTIVADA' : 'Lectura DESACTIVADA') : 'Lectura no disponible' }}</span>
+</button>
