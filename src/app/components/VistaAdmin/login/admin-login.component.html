@@ -1,0 +1,22 @@
+<main class="login-page" id="contenido-principal">
+  <section class="login-card" aria-labelledby="login-title">
+    <a class="back-link" routerLink="/">← Volver al inicio</a>
+    <p class="overline">SIN FRONTERAS · CERCADO, COCHABAMBA</p>
+    <h1 id="login-title">Acceso administrativo</h1>
+    <p class="description">Ingresa la contraseña administrativa para continuar.</p>
+
+    <form (ngSubmit)="login()">
+      <label for="admin-password">Contraseña</label>
+      <input
+        id="admin-password"
+        name="password"
+        type="password"
+        autocomplete="current-password"
+        [(ngModel)]="password"
+        required
+      >
+      <p class="error" role="alert" [hidden]="!errorMessage">{{ errorMessage }}</p>
+      <button class="login-button" type="submit" [disabled]="!password">Iniciar sesión</button>
+    </form>
+  </section>
+</main>

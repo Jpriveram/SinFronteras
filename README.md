@@ -16,16 +16,17 @@ Abrir **http://localhost:4200/**. No es necesario instalar Angular CLI de forma 
 Secciones disponibles:
 
 - `/` — Página de inicio, basada en la composición Figma; se reemplazaron las fotografías por referencias reales de Bolivia disponibles en la web.
+- `/login` — Acceso administrativo local mediante contraseña.
 - `/servicios` — Directorio de ejemplo con búsqueda textual y filtrado por categoría.
 - `/servicios/:id` — Ficha de servicio con descripción, requisitos, horarios, contacto, ubicación e indicador del estado de verificación.
-- `/admin` — Panel de prueba para **agregar, editar, eliminar y restablecer** fichas, guardadas solo en `localStorage` del navegador.
+- `/admin` — Panel de prueba para **agregar, editar, eliminar y restablecer** fichas, guardadas solo en `localStorage` del navegador. Requiere iniciar sesión desde `/login`.
 
 ## Muy importante: qué SÍ y qué NO incluye
 
 Esta entrega permite evaluar el **diseño y la interacción del frontend**, pero **no es un sistema productivo**:
 
 - Los cuatro registros iniciales son **ficticios y están marcados como demostración**. No se presentan como instituciones, horarios ni requisitos oficiales. Una persona responsable debe verificar los datos antes de publicar el portal.
-- La administración es una maqueta **sin autenticación ni permisos**; NO se debe desplegar en producción. Guarda solo cambios locales del navegador.
+- El acceso administrativo es una protección de navegación de demostración: contraseña `admin123` en el código del frontend y un indicador de sesión en `sessionStorage`. **No es autenticación segura**: la contraseña puede descubrirse inspeccionando los archivos compilados; no se debe desplegar en producción ni usar para proteger datos sensibles. Los cambios de servicios se guardan solo en `localStorage` del navegador.
 - **No incluye el backend Spring Boot ni la base MySQL.** Se ha mantenido el enfoque Angular para poder iniciar la demo con `npm install && npm start`. La arquitectura backend mencionada en el documento corresponde a una etapa posterior.
 - No incluye comercio, foro, trabajo, transporte, eventos, perfiles, pagos, reservas, gestión de trámites, seguimiento en tiempo real, IA ni geolocalización; esas funciones no pertenecen al alcance del documento.
 - Contiene un espacio y campo para vincular recursos en **Lengua de Señas Boliviana (LSB)**, pero no se dispone de videos verificados en esta versión. No hay traducción ni reconocimiento automático de señas.
@@ -40,21 +41,27 @@ Son **fotografías reales**, no imágenes generadas con IA. Se muestran desde Wi
 ```text
 src/app/
   app.routes.ts
-  services/directorio.service.ts
+  services/
+    auth.service.ts
+    directorio.service.ts
+  guards/
+    admin.guard.ts
   components/
     VistaUsuario/
       home/                 <- homepage inspirado en Figma
       catalogo/             <- búsqueda y filtros
       detalle-servicio/     <- ficha del servicio
     VistaAdmin/
+      login/                <- acceso administrativo local
       servicios/            <- edición en localStorage (demo)
   shared/
+    accessibility-reader/   <- lectura por voz global
     navbar/                 <- navegación y accesibilidad
     footer/
 ```
 
 ## Notas de integración futura
 
-Para integrar al proyecto original, conectar `DirectorioService` a una API Spring Boot con persistencia MySQL (endpoints para listado, filtros, detalle y administración); aplicar autenticación y autorización al módulo `/admin`; sustituir los datos de demostración por registros reales y revisados; verificar información institucional y añadir recursos LSB autorizados; ejecutar pruebas WCAG con lectores de pantalla y navegación de teclado.
+Para integrar al proyecto original, conectar `DirectorioService` a una API Spring Boot con persistencia MySQL (endpoints para listado, filtros, detalle y administración); sustituir la protección local de demostración por autenticación y autorización en servidor para `/admin`; sustituir los datos de demostración por registros reales y revisados; verificar información institucional y añadir recursos LSB autorizados; ejecutar pruebas WCAG con lectores de pantalla y navegación de teclado.
 
 Fuente del diseño: Figma exportado a PDF por el usuario. Fuente de los requisitos: documento de Metodología entregado por el usuario.
