@@ -1,0 +1,96 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f7f7f4;
+}
+
+.login-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+.login-card {
+  width: min(100%, 460px);
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border: 1px solid #deded9;
+  border-top: 5px solid #839d50;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgb(0 0 0 / 8%);
+}
+
+.back-link {
+  color: #71531a;
+  font-weight: 700;
+}
+
+.overline {
+  margin: 2rem 0 0.4rem;
+  color: #8f742c;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  margin: 0;
+  color: #242424;
+  font-size: clamp(1.8rem, 7vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.description {
+  color: #555;
+  line-height: 1.5;
+}
+
+form {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+label {
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.7rem;
+  border: 1.5px solid #797979;
+  border-radius: 3px;
+  background: #fff;
+  color: #202020;
+  font: inherit;
+}
+
+.error {
+  margin: 0;
+  color: #a32121;
+  font-weight: 700;
+}
+
+.login-button {
+  min-height: 48px;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 3px;
+  background: #ff9900;
+  color: #17120a;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.login-button:hover:not(:disabled) {
+  background: #d78200;
+}
+
+.login-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}

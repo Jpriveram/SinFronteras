@@ -4,7 +4,7 @@ Documento académico base: «Desarrollo de un portal web para el fortalecimiento
 
 ## En el documento
 
-- Portal web **informativo**, de consulta pública, sin registro ni inicio de sesión.
+- Portal web **informativo**, de consulta pública para visitantes, sin registro ni inicio de sesión para consultar el directorio.
 - Información de instituciones y servicios para personas con discapacidad **exclusivamente en Cercado, Cochabamba**.
 - Búsqueda y filtrado.
 - Fichas con descripción, requisitos, horarios, contacto y ubicación.
@@ -25,4 +25,6 @@ Por eso se **retiraron del menú** Marketplace, Bolsa de empleo, Transporte, For
 
 ## Estado real de esta entrega
 
-La maqueta de frontend funciona de forma autónoma con datos de ejemplo y persistencia local de demostración. La integración con Spring Boot/MySQL, control de acceso del módulo administrativo, consulta de datos reales y multimedia LSB **no están implementados todavía**. No confundir esta maqueta con el portal completo propuesto en la investigación.
+La maqueta de frontend funciona de forma autónoma con datos de ejemplo y persistencia local de demostración. El módulo `/admin` tiene una pantalla `/login`, un guard de navegación y una contraseña fija de demostración (`admin123`); la sesión se conserva en `sessionStorage` de la pestaña y los datos continúan en `localStorage`. **No es autenticación ni autorización segura**: la contraseña está en el código frontend y puede descubrirse. No usar para producción ni datos sensibles.
+
+La integración con Spring Boot/MySQL, autenticación/autorización real en servidor, consulta de datos reales y multimedia LSB **no están implementados todavía**. No confundir esta maqueta con el portal completo propuesto en la investigación.

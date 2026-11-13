@@ -1,9 +1,10 @@
 <app-navbar />
 <main id="contenido-principal" class="admin-page">
   <a routerLink="/servicios" class="back">← Directorio público</a>
+  <button type="button" class="logout-btn" (click)="logout()">Cerrar sesión</button>
   <p class="overline">MÓDULO ADMINISTRATIVO · MAQUETA FUNCIONAL</p>
   <h1>Gestionar información de servicios</h1>
-  <div class="warning" role="note"><strong>Solo demostración local:</strong> este módulo no utiliza autenticación ni servidor; los cambios se guardan únicamente en el navegador. No publiques datos sensibles aquí. Antes de uso real, conectar con Spring Boot + MySQL y proteger la administración con acceso autorizado.</div>
+  <div class="warning" role="note"><strong>Solo demostración local:</strong> la sesión y los cambios existen únicamente en este navegador. Este acceso frontend no es seguridad real; no publiques datos sensibles aquí.</div>
   <div class="admin-layout">
     <section aria-labelledby="records-title" class="record-list">
       <h2 id="records-title">Fichas registradas ({{ items.length }})</h2>
