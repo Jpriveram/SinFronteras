@@ -1,1 +1,181 @@
-.sf-footer{background:#fff;color:#292929;border-top:1px solid #eaeaea;padding:31px 0 42px;font-family:Arial,Helvetica,sans-serif}.sf-footer__inner{width:min(1180px,calc(100% - 46px));margin:auto;display:flex;align-items:flex-start;gap:26px;justify-content:space-between;flex-wrap:wrap}.sf-footer strong{font-size:1rem}.sf-footer p{max-width:330px;font-size:.87rem;line-height:1.5;color:#666;margin:9px 0 0}.sf-footer nav{display:flex;flex-wrap:wrap;gap:17px}.sf-footer a{font-size:.87rem;color:#4c4c4c;text-decoration:none}.sf-footer a:hover{text-decoration:underline}.sf-footer small{width:100%;color:#666;font-size:.77rem}@media(max-width:600px){.sf-footer__inner{display:block}.sf-footer nav{margin:20px 0}}
+:host {
+  display: block;
+}
+
+// Paleta institucional y contenedor compartido con el portal.
+.sf-footer {
+  border-top: 1px solid #71383d;
+  background: #48171e;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.sf-footer__inner {
+  width: min(1180px, calc(100% - 46px));
+  margin-inline: auto;
+}
+
+.sf-footer__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 40px 72px;
+  padding-block: 52px 44px;
+}
+
+.sf-footer__brand {
+  display: block;
+  color: #fff;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.sf-footer__description {
+  max-width: 460px;
+  margin: 18px 0 0;
+  color: #eadde0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.sf-footer__nav {
+  min-width: 0;
+  padding-left: 32px;
+  border-left: 1px solid #81565c;
+}
+
+.sf-footer__title {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  line-height: 1.5;
+}
+
+.sf-footer__links {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sf-footer__links li {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.sf-footer__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #f5ecee;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-color: #ac878d;
+  text-underline-offset: 5px;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.sf-footer__links a:hover,
+.sf-footer__links a:focus-visible {
+  border-color: #987077;
+  background: #622d36;
+  color: #fff;
+  text-decoration-color: currentColor;
+}
+
+.sf-footer__links a:focus-visible {
+  // Halo claro adicional al contorno azul definido globalmente.
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 7px #fff;
+}
+
+.sf-footer__bottom {
+  border-top: 1px solid #71444b;
+  background: #351016;
+  // Espacio libre para el lector flotante, también con A+.
+  padding-block: 22px calc(5rem + env(safe-area-inset-bottom, 0px));
+}
+
+.sf-footer__bottom small {
+  display: block;
+  color: #e5d6d9;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+// Las preferencias globales conservan prioridad sobre la paleta decorativa.
+:host-context(body.alto-contraste) .sf-footer__bottom {
+  background: #080808;
+  border-color: #fff;
+}
+
+:host-context(body.alto-contraste) .sf-footer__nav {
+  border-color: #fff;
+}
+
+:host-context(body.alto-contraste) .sf-footer__links a:hover,
+:host-context(body.alto-contraste) .sf-footer__links a:focus-visible {
+  border-color: #ffec4f;
+  background: #222;
+}
+
+// En escritorio, el lector ocupa espacio lateral en lugar de espacio inferior.
+@media (min-width: 821px) {
+  .sf-footer__bottom {
+    padding-bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .sf-footer__bottom .sf-footer__inner {
+    padding-right: 17rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .sf-footer__main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding-block: 36px 32px;
+  }
+
+  .sf-footer__nav {
+    padding-top: 24px;
+    padding-left: 0;
+    border-top: 1px solid #81565c;
+    border-left: 0;
+  }
+
+  .sf-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+}
+
+@media (max-width: 620px) {
+  .sf-footer__inner {
+    width: calc(100% - 32px);
+  }
+
+  .sf-footer__bottom {
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sf-footer__links a {
+    transition: none;
+  }
+}
