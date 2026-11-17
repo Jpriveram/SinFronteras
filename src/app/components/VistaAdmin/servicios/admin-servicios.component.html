@@ -12,7 +12,7 @@
       <ul>
         <li *ngFor="let item of items"><div><strong>{{ item.nombre }}</strong><small>{{ item.institucion }}</small></div><div class="actions"><button type="button" (click)="edit(item)" [attr.aria-label]="'Editar ' + item.nombre">Editar</button><button type="button" (click)="remove(item)" [attr.aria-label]="'Eliminar ' + item.nombre">Eliminar</button></div></li>
       </ul>
-      <button type="button" class="light-btn" (click)="reset()">Restablecer datos de ejemplo</button>
+      <button type="button" class="light-btn" (click)="reset()">Restablecer catálogo inicial</button>
     </section>
     <section class="form-section" aria-labelledby="form-title">
       <h2 id="form-title">{{ editingExisting ? 'Editar ficha' : 'Agregar ficha' }}</h2>

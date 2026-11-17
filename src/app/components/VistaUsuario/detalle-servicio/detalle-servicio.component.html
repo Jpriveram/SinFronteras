@@ -2,16 +2,22 @@
 <main id="contenido-principal" class="details-page">
   <a routerLink="/servicios" class="back">← Volver al directorio</a>
   <ng-container *ngIf="item as service; else missing">
-    <p class="category">{{ service.categoria }} · CERCADO, COCHABAMBA</p>
+    <p class="category">{{ service.categoria }} · {{ service.ubicacion }}</p>
     <h1>{{ service.nombre }}</h1>
-    <div class="verified" [class.is-verified]="service.verificado">{{ service.verificado ? 'Datos revisados por la administración del prototipo' : 'FICHA DE DEMOSTRACIÓN · información sin verificar' }}</div>
     <p class="lead">{{ service.descripcion }}</p>
     <section class="detail-grid" aria-label="Información del servicio">
       <article><h2>Institución responsable</h2><p>{{ service.institucion }}</p></article>
+      <article><h2>Población destinataria</h2><p>{{ service.poblacion || 'Información no disponible.' }}</p></article>
+      <article><h2>Servicios específicos</h2><p>{{ service.servicios || 'Información no disponible.' }}</p></article>
+      <article><h2>Dirección</h2><p>{{ service.direccion || 'Información no disponible.' }}</p></article>
+      <article><h2>Municipio</h2><p>{{ service.municipio || service.ubicacion || 'Información no disponible.' }}</p></article>
+      <article><h2>Teléfono</h2><p>{{ service.telefono || service.contacto || 'Información no disponible.' }}</p></article>
+      <article><h2>Correo electrónico</h2><p>{{ service.correo || 'Información no disponible.' }}</p></article>
       <article><h2>Requisitos</h2><p>{{ service.requisitos }}</p></article>
       <article><h2>Horario de atención</h2><p>{{ service.horarios }}</p></article>
-      <article><h2>Contacto</h2><p>{{ service.contacto }}</p></article>
-      <article><h2>Ubicación</h2><p>{{ service.ubicacion }}</p></article>
+      <article><h2>Fuente de información</h2><p *ngIf="service.fuente as source"><a [href]="source.url" target="_blank" rel="noopener noreferrer">{{ source.nombre }}</a></p><p *ngIf="!service.fuente">Información no disponible.</p></article>
+      <article><h2>Fecha de última verificación</h2><p>{{ service.fechaVerificacion || 'Pendiente de confirmación.' }}</p></article>
+      <article><h2>Fuente consultada el</h2><p>{{ service.fechaRevisionFuente || 'Información no disponible.' }}</p></article>
       <article><h2>Información y recursos LSB</h2><p *ngIf="!externalLsb">No se ha incorporado todavía un recurso multimedia en Lengua de Señas Boliviana para esta ficha.</p><p *ngIf="externalLsb"><a [href]="externalLsb" target="_blank" rel="noopener noreferrer">Abrir recurso multimedia en Lengua de Señas Boliviana (sitio externo)</a></p></article>
     </section>
     <div class="contact-actions" *ngIf="externalWeb"><a [href]="externalWeb" target="_blank" rel="noopener noreferrer">Visitar sitio de la institución ↗</a></div>
