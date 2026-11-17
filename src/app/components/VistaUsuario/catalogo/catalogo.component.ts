@@ -17,12 +17,33 @@ export class CatalogoComponent {
   private readonly directory = inject(DirectorioService);
   query = '';
   selectedCategory = 'Todas';
-  readonly categories: Categoria[] = ['Salud y rehabilitación', 'Orientación y derechos', 'Educación y comunicación', 'Apoyo e inclusión'];
+  readonly categories: Categoria[] = [
+    'Salud y rehabilitación',
+    'Orientación y derechos',
+    'Educación y comunicación',
+    'Apoyo e inclusión',
+    'Educación especial y rehabilitación',
+    'Rehabilitación y habilitación para personas con discapacidad visual',
+    'Educación especial'
+  ];
   get filtered(): Servicio[] {
     const search = this.query.trim().toLocaleLowerCase('es-BO');
     return this.directory.getAll().filter(item => {
       const matchCategory = this.selectedCategory === 'Todas' || item.categoria === this.selectedCategory;
-      const text = `${item.nombre} ${item.institucion} ${item.categoria} ${item.descripcion}`.toLocaleLowerCase('es-BO');
+      const text = [
+        item.nombre,
+        item.institucion,
+        item.categoria,
+        item.descripcion,
+        item.poblacion,
+        item.servicios,
+        item.direccion,
+        item.municipio,
+        item.ubicacion,
+        item.telefono,
+        item.correo,
+        item.fuente?.nombre
+      ].filter(Boolean).join(' ').toLocaleLowerCase('es-BO');
       return matchCategory && (!search || text.includes(search));
     });
   }

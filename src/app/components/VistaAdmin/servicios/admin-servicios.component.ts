@@ -18,7 +18,15 @@ export class AdminServiciosComponent {
   private readonly directorio = inject(DirectorioService);
   private readonly auth = inject(AuthService);
   private readonly router = inject(Router);
-  readonly categories: Categoria[] = ['Salud y rehabilitación', 'Orientación y derechos', 'Educación y comunicación', 'Apoyo e inclusión'];
+  readonly categories: Categoria[] = [
+    'Salud y rehabilitación',
+    'Orientación y derechos',
+    'Educación y comunicación',
+    'Apoyo e inclusión',
+    'Educación especial y rehabilitación',
+    'Rehabilitación y habilitación para personas con discapacidad visual',
+    'Educación especial'
+  ];
   editing: Servicio = this.blank();
   editingExisting = false;
   status = '';
@@ -34,7 +42,16 @@ export class AdminServiciosComponent {
     if (!this.editing.nombre.trim() || !this.editing.institucion.trim() || !this.editing.descripcion.trim()) {
       this.status = 'Completa nombre, institución y descripción.'; return;
     }
-    const item: Servicio = { ...this.editing, id: this.editingExisting ? this.editing.id : 'demo-' + Date.now().toString(36), nombre: this.editing.nombre.trim(), institucion: this.editing.institucion.trim(), descripcion: this.editing.descripcion.trim() };
+    const item: Servicio = {
+      ...this.editing,
+      id: this.editingExisting ? this.editing.id : 'demo-' + Date.now().toString(36),
+      nombre: this.editing.nombre.trim(),
+      institucion: this.editing.institucion.trim(),
+      descripcion: this.editing.descripcion.trim(),
+      fechaVerificacion: this.editing.verificado
+        ? this.editing.fechaVerificacion || new Date().toLocaleDateString('es-BO')
+        : undefined
+    };
     this.directorio.upsert(item);
     this.newRecord();
     this.status = 'Ficha guardada en este navegador (demostración).';
@@ -46,9 +63,9 @@ export class AdminServiciosComponent {
     this.status = 'Ficha eliminada de este navegador.';
   }
   reset(): void {
-    if (!window.confirm('¿Restablecer los ejemplos y descartar los cambios locales?')) return;
+    if (!window.confirm('¿Restablecer el catálogo inicial y descartar los cambios locales?')) return;
     this.directorio.resetDemo();
     this.newRecord();
-    this.status = 'Datos de demostración restaurados.';
+    this.status = 'Catálogo inicial restaurado.';
   }
 }

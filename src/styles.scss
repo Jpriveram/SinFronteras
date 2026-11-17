@@ -1,1 +1,238 @@
-:root{--font-scale:100%;color-scheme:light;scroll-behavior:smooth}*{box-sizing:border-box}html{font-size:var(--font-scale)}body{margin:0;color:#222;background:#fff;font-family:Arial,Helvetica,sans-serif}a,button,input,textarea,select{font:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #174ce1!important;outline-offset:3px}.skip-link{position:absolute;top:-100px;left:12px;z-index:10000;background:#fff;color:#000;padding:11px}.skip-link:focus{top:8px}body.alto-contraste{background:#000!important;color:#fff!important}body.alto-contraste .sf-header,body.alto-contraste .sf-nav,body.alto-contraste main,body.alto-contraste section,body.alto-contraste article,body.alto-contraste footer,body.alto-contraste aside,body.alto-contraste .home-intro__description,body.alto-contraste .demo-alert{background:#080808!important;color:#fff!important}body.alto-contraste h1,body.alto-contraste h2,body.alto-contraste h3,body.alto-contraste p,body.alto-contraste label,body.alto-contraste strong,body.alto-contraste small,body.alto-contraste span,body.alto-contraste a{color:#fff!important}body.alto-contraste a{text-decoration:underline!important}body.alto-contraste .phrase,body.alto-contraste .register-stripe,body.alto-contraste .mini-register,body.alto-contraste .register-action{background:#161616!important;color:#fff!important;border:2px solid #ffec4f!important}body.alto-contraste img{filter:grayscale(1)}body.alto-contraste .check{color:#fff!important}body.alto-contraste input,body.alto-contraste select,body.alto-contraste textarea{background:#222!important;color:#fff!important;border-color:#fff!important}body.alto-contraste button{background:#222!important;color:#fff!important;border-color:#ff0!important}
+:root {
+  --font-scale: 100%;
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-scale);
+}
+
+body {
+  margin: 0;
+  color: #222;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #174ce1 !important;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 10000;
+  padding: 11px;
+  background: #fff;
+  color: #000;
+}
+
+.skip-link:focus {
+  top: 8px;
+}
+
+body.alto-contraste {
+  color-scheme: dark;
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body.alto-contraste .sf-header,
+body.alto-contraste .sf-nav,
+body.alto-contraste app-admin-login,
+body.alto-contraste main,
+body.alto-contraste section,
+body.alto-contraste article,
+body.alto-contraste figure,
+body.alto-contraste footer,
+body.alto-contraste aside,
+body.alto-contraste .home-intro__description,
+body.alto-contraste .demo-alert,
+body.alto-contraste .filters,
+body.alto-contraste .service-card,
+body.alto-contraste .detail-grid article,
+body.alto-contraste .disclaimer,
+body.alto-contraste .empty,
+body.alto-contraste .step-card,
+body.alto-contraste .lsb-note,
+body.alto-contraste .home-register__body,
+body.alto-contraste .login-card,
+body.alto-contraste .record-list,
+body.alto-contraste .form-section,
+body.alto-contraste .record-list li,
+body.alto-contraste .warning {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste p,
+body.alto-contraste label,
+body.alto-contraste strong,
+body.alto-contraste small,
+body.alto-contraste span,
+body.alto-contraste li,
+body.alto-contraste figcaption,
+body.alto-contraste .overline,
+body.alto-contraste .category,
+body.alto-contraste .institution,
+body.alto-contraste .footnote,
+body.alto-contraste .description,
+body.alto-contraste .media-credits,
+body.alto-contraste .status,
+body.alto-contraste .verified,
+body.alto-contraste .error {
+  color: #fff !important;
+}
+
+body.alto-contraste a,
+body.alto-contraste .back,
+body.alto-contraste .service-bottom a,
+body.alto-contraste .detail-grid a,
+body.alto-contraste .media-credits a {
+  color: #ffec4f !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+body.alto-contraste .sf-links > a:hover,
+body.alto-contraste .sf-links__active,
+body.alto-contraste .sf-footer__links a:hover,
+body.alto-contraste .sf-footer__links a:focus-visible {
+  color: #ffec4f !important;
+}
+
+body.alto-contraste .phrase,
+body.alto-contraste .register-stripe,
+body.alto-contraste .mini-register,
+body.alto-contraste .register-action,
+body.alto-contraste .demo-alert,
+body.alto-contraste .warning,
+body.alto-contraste .status,
+body.alto-contraste .status.verified,
+body.alto-contraste .verified,
+body.alto-contraste .verified.is-verified {
+  background: #111 !important;
+  color: #fff !important;
+  border: 2px solid #ffec4f !important;
+}
+
+body.alto-contraste .sf-logo img {
+  background: #fff;
+  border: 2px solid #ffec4f;
+  border-radius: 2px;
+  filter: none !important;
+}
+
+body.alto-contraste img {
+  filter: none;
+}
+
+body.alto-contraste .sf-header,
+body.alto-contraste .sf-nav,
+body.alto-contraste .sf-access,
+body.alto-contraste .sf-access button,
+body.alto-contraste .mobile-menu,
+body.alto-contraste .service-card,
+body.alto-contraste .filters,
+body.alto-contraste .detail-grid article,
+body.alto-contraste .step-card,
+body.alto-contraste .record-list,
+body.alto-contraste .form-section,
+body.alto-contraste .record-list li,
+body.alto-contraste .sf-footer,
+body.alto-contraste .sf-footer__bottom,
+body.alto-contraste .sf-footer__nav {
+  border-color: #fff !important;
+}
+
+body.alto-contraste .sf-access button,
+body.alto-contraste .mobile-menu,
+body.alto-contraste button,
+body.alto-contraste .contact-actions a,
+body.alto-contraste .login-button,
+body.alto-contraste .primary-btn,
+body.alto-contraste .logout-btn,
+body.alto-contraste .actions button,
+body.alto-contraste .light-btn,
+body.alto-contraste .clear,
+body.alto-contraste .sf-footer__links a {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #ffec4f !important;
+}
+
+body.alto-contraste button:hover,
+body.alto-contraste .contact-actions a:hover,
+body.alto-contraste .login-button:hover:not(:disabled),
+body.alto-contraste .primary-btn:hover:not(:disabled),
+body.alto-contraste .sf-footer__links a:hover {
+  background: #222 !important;
+  color: #ffec4f !important;
+}
+
+body.alto-contraste input,
+body.alto-contraste select,
+body.alto-contraste textarea,
+body.alto-contraste option {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+body.alto-contraste .service-card,
+body.alto-contraste .detail-grid article,
+body.alto-contraste .step-card,
+body.alto-contraste .filters,
+body.alto-contraste .login-card,
+body.alto-contraste .record-list,
+body.alto-contraste .form-section,
+body.alto-contraste .detail-grid article,
+body.alto-contraste .benefits-list li,
+body.alto-contraste .sf-footer,
+body.alto-contraste .sf-footer__bottom,
+body.alto-contraste .sf-footer__nav {
+  border-color: #ffec4f !important;
+}
+
+body.alto-contraste a:focus-visible,
+body.alto-contraste button:focus-visible,
+body.alto-contraste input:focus-visible,
+body.alto-contraste textarea:focus-visible,
+body.alto-contraste select:focus-visible {
+  outline-color: #ffec4f !important;
+}
+
+body.alto-contraste .sf-footer__description,
+body.alto-contraste .sf-footer__bottom small {
+  color: #fff !important;
+}
+
+body.alto-contraste .sf-footer {
+  background: #000 !important;
+}
