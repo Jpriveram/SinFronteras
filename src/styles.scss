@@ -51,8 +51,12 @@ select:focus-visible {
 }
 
 .skip-link:focus {
-  top: 8px;
+  top: calc(100% + 8px);
 }
+
+/* Evita que las anclas queden tapadas por el navbar sticky. */
+html { scroll-padding-top: 120px; }
+#contenido-principal, #como-funciona, #accesibilidad { scroll-margin-top: 120px; }
 
 body.alto-contraste {
   color-scheme: dark;
