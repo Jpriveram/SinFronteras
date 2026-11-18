@@ -1,5 +1,5 @@
 
-:host {display:block;}
+:host {display:block;position:sticky;top:0;z-index:100;}
 .sf-header{background:#fff;border-bottom:1px solid #eeeeec;position:relative;z-index:20;}
 .sf-nav{width:min(1180px,calc(100% - 46px));margin:auto;min-height:95px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
 .sf-logo{flex-shrink:0;display:flex;align-items:center;}

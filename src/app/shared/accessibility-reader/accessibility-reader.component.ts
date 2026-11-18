@@ -84,14 +84,14 @@ export class AccessibilityReaderComponent implements OnInit, OnDestroy {
   @HostListener('document:focusin', ['$event'])
   onFocus(event: FocusEvent): void {
     if (!this.enabled || !(event.target instanceof Element)) return;
-    const option = event.target.closest('[role="option"], [role="menuitem"], [role="menuitemradio"], [role="menuitemcheckbox"]');
-    if (option) {
-      this.scheduleOptionAnnouncement(option, false);
-      return;
-    }
 
-    const control = this.getControlElement(event.target);
-    if (control) this.scheduleControlAnnouncement(control, 'focus');
+    // Tab lee enlaces, incluidos «Saltar al contenido» y los del navbar.
+    // No incorporamos imágenes ni textos estáticos al orden de tabulación.
+    const link = event.target.closest('a[href]');
+    if (!link || !this.isVisible(link)) return;
+
+    const text = this.getReadableText(link);
+    if (text) this.speak(text);
   }
 
   @HostListener('document:input', ['$event'])
@@ -177,11 +177,14 @@ export class AccessibilityReaderComponent implements OnInit, OnDestroy {
     }
 
     const element = target.closest(
-      'button, a, h1, h2, h3, h4, h5, h6, p, label, li, img, ' +
+      'button, a, h1, h2, h3, h4, h5, h6, p, label, li, img, figcaption, ' +
+      '.home-intro__description, .home-intro__eyebrow, .register-stripe, ' +
+      '.step-number, .media-credits, ' +
       '[role="button"], [role="link"], [role="heading"], [role="menuitem"], ' +
       '[role="tab"], [role="img"], [role="option"], [role="menuitemradio"], ' +
       '[role="menuitemcheckbox"], [aria-label], [aria-labelledby]'
-    ) ?? target;
+    );
+    if (!element) return null;
 
     if (element.matches('form')) return null;
     if (element.matches('svg, path, [role="presentation"], [role="none"]')) return null;
